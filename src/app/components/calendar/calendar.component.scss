@@ -1,0 +1,44 @@
+:host{
+    position: relative;
+    display:block;
+    height: calc(100% - 70px);
+    width: calc(100% - 60px);
+    margin-left: 60px;
+    font-size: xx-large;
+    .month{
+        display: block;
+        margin: auto;
+        text-align: center;
+        width: 80%;
+        .calendarDay{
+            position: relative;
+            display: inline-block;
+            background-color: cadetblue;
+            width: 10%;
+            height: 10%;
+            &:first-child{
+                &.Mon{
+                    margin-left: 0%;
+                }
+                &.Tue{
+                    margin-left: 10%;
+                }
+                &.Wed{
+                    margin-left: 20%;
+                }
+                &.Thu{
+                    margin-left: 30%;
+                }
+                &.Fri{
+                    margin-left: 40%;
+                }
+                &.Sat{
+                    margin-left: 50%;
+                }
+                &.Sun{
+                    margin-left: 60%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+:host{
+    position: absolute;
+    display: block;
+    background-color: #222422;
+    height: calc(100% - 70px);
+    width: 60px;
+    .material-icons{
+        position: relative;
+        display: block;
+        text-align: center;
+        font-size: 3em;
+        color: white;
+    }
+    
+    .side-menu_button{
+        padding: 5px 0px;
+        cursor: pointer;
+        &:hover{
+            background-color: gray;
+        }
+        .tip{
+            color: chocolate;
+            background-color: #222422;
+        }
+        &.active{
+            background-color: white;
+            color: black;
+            border-left: solid 4px chocolate;
+            &:hover{
+                background-color: white;
+            }
+        }
+    }
+
+}

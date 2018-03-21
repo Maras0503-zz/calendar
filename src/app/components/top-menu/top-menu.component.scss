@@ -1,0 +1,14 @@
+:host{
+    position: relative;
+    display: block;
+    height: 70px;
+    width: 100%;
+    background-color: white;
+    box-sizing: border-box;
+    border-bottom: solid 4px chocolate;
+    h1{
+        font-size: 2.5em;
+        font-family: cursive;
+        text-align: center;
+    }    
+}

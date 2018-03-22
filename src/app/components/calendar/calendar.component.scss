@@ -5,40 +5,67 @@
     width: calc(100% - 60px);
     margin-left: 60px;
     font-size: xx-large;
+    h2{
+        display: inline-block;
+        width: 100px;
+        text-align: center;
+    }
     .month{
+        margin-top: 10%;
         display: block;
         margin: auto;
-        text-align: center;
         width: 80%;
         .calendarDay{
-            position: relative;
+            //position: relative;
             display: inline-block;
-            background-color: cadetblue;
-            width: 10%;
+            background-color: #222422;
+            border: solid chocolate;
+            border-radius: 10px;
+            color: white;
+            box-sizing: border-box;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            width: 13%;
             height: 10%;
+            text-align: center;
             &:first-child{
                 &.Mon{
                     margin-left: 0%;
                 }
                 &.Tue{
-                    margin-left: 10%;
+                    margin-left: 13%;
                 }
                 &.Wed{
-                    margin-left: 20%;
+                    margin-left: 26%;
                 }
                 &.Thu{
-                    margin-left: 30%;
+                    margin-left: 39%;
                 }
                 &.Fri{
-                    margin-left: 40%;
+                    margin-left: 52%;
                 }
                 &.Sat{
-                    margin-left: 50%;
+                    margin-left: 65%;
                 }
                 &.Sun{
-                    margin-left: 60%;
+                    margin-left: 78%;
                 }
             }
+        }
+        .calendarWeekDay{
+            //position: relative;
+            display: inline-block;
+            background-color: white;
+            border: solid chocolate;
+            border-radius: 10px;
+            color: black;
+            box-sizing: border-box;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            font-size: x-large;
+            width: 13%;
+            height: 10%;
+            text-align: center;
         }
     }
 }

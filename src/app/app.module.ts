@@ -25,6 +25,11 @@ import { StatsComponent } from './components/stats/stats.component';
     BrowserModule,
     RouterModule.forRoot([
       {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'calendar'
+      },
+      {
         path: 'account',
         component: AccountComponent
       },

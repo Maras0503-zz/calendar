@@ -1,16 +1,11 @@
-KALENDARZ 
-<button (click)='decMonth()'>-</button><h2>{{month}}</h2><button (click)='incMonth()'>+</button>
-<button (click)='decYear()'>-</button><h2>{{year}}</h2><button (click)='incYear()'>+</button>
+<div class='buttonsContainer'>
+    <button (click)='decMonth()'>-</button><h2>{{monthList[month-1]}}</h2><button (click)='incMonth()'>+</button>
+    <button (click)='decYear()'>-</button><h2>{{year}}</h2><button (click)='incYear()'>+</button>
+</div>
+
 <div class='month'>
-    <div class='calendarWeekDay'>MONDAY</div>
-    <div class='calendarWeekDay'>TUESDAY</div>
-    <div class='calendarWeekDay'>WEDNESDAY</div>
-    <div class='calendarWeekDay'>THURSDAY</div>
-    <div class='calendarWeekDay'>FRIDAY</div>
-    <div class='calendarWeekDay'>SATURDAY</div>
-    <div class='calendarWeekDay'>SUNDAY</div>
-    <div>
-        <div class='calendarDay' [ngClass]="currentDate | date: 'EEE'">1</div>
-        <div class='calendarDay' *ngFor='let day of days'>{{day}}</div>
+    <div class='calendarWeekDay'>MONDAY</div><div class='calendarWeekDay'>TUESDAY</div><div class='calendarWeekDay'>WEDNESDAY</div><div class='calendarWeekDay'>THURSDAY</div><div class='calendarWeekDay'>FRIDAY</div><div class='calendarWeekDay'>SATURDAY</div><div class='calendarWeekDay'>SUNDAY</div>
+    <div class='calendarBody'>
+        <app-month-day [ngClass]="currentDate | date: 'EEE'" dayNo = 1 (click)='showDayOptions(1)'></app-month-day><app-month-day *ngFor='let day of days' dayNo = {{day}} (click)='showDayOptions(day)'></app-month-day>
     </div>
 </div>

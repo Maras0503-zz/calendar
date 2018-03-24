@@ -1,15 +1,16 @@
+@import './src/assets/variables.scss';
 :host{
     position: absolute;
     display: block;
-    background-color: #222422;
-    height: calc(100% - 70px);
-    width: 60px;
+    background-color: $first-background-color;
+    height: calc(100% - #{$top-menu-height});
+    width: $side-menu-width;
     .material-icons{
         position: relative;
         display: block;
         text-align: center;
         font-size: 3em;
-        color: white;
+        color: $second-background-color;
     }
     
     .side-menu_button{
@@ -19,15 +20,15 @@
             background-color: gray;
         }
         .tip{
-            color: chocolate;
+            color: $borders-color;
             background-color: #222422;
         }
         &.active{
-            background-color: white;
+            background-color: $second-background-color;
             color: black;
-            border-left: solid 4px chocolate;
+            border-left: solid 4px $borders-color;
             &:hover{
-                background-color: white;
+                background-color: $second-background-color;
             }
         }
     }

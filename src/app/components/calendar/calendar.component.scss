@@ -1,69 +1,56 @@
+@import './src/assets/variables.scss';
 :host{
     position: relative;
     display:block;
-    height: calc(100% - 70px);
-    width: calc(100% - 60px);
-    margin-left: 60px;
+    max-height: calc(100% - $top-menu-height);
+    width: calc(100% - $side-menu-width);
+    margin-left: $side-menu-width;
     font-size: xx-large;
     h2{
         display: inline-block;
-        width: 100px;
+        width: 200px;
+        font-size: 1.1em;
+        font-family: cursive;
+        height: 60px;
         text-align: center;
     }
+    .buttonsContainer{
+        text-align: center;
+        margin-top: 10px;
+        width: calc( 100% - 60px );
+        font-family: cursive;
+        button{
+            width: 60px;
+            height: 60px;
+            border: solid $borders-color 2px;
+            background-color: $second-background-color;
+            color: black;
+            font-size: large;
+            cursor: pointer;
+        }
+    }
     .month{
-        margin-top: 10%;
+        position: relative;
+        padding-top: 50px;
         display: block;
         margin: auto;
         width: 80%;
-        .calendarDay{
-            //position: relative;
-            display: inline-block;
-            background-color: #222422;
-            border: solid chocolate;
-            border-radius: 10px;
-            color: white;
-            box-sizing: border-box;
-            padding-top: 15px;
-            padding-bottom: 15px;
-            width: 13%;
-            height: 10%;
-            text-align: center;
-            &:first-child{
-                &.Mon{
-                    margin-left: 0%;
-                }
-                &.Tue{
-                    margin-left: 13%;
-                }
-                &.Wed{
-                    margin-left: 26%;
-                }
-                &.Thu{
-                    margin-left: 39%;
-                }
-                &.Fri{
-                    margin-left: 52%;
-                }
-                &.Sat{
-                    margin-left: 65%;
-                }
-                &.Sun{
-                    margin-left: 78%;
-                }
-            }
+        
+        .calendarBody{
+            margin-top: 20px;
         }
         .calendarWeekDay{
-            //position: relative;
             display: inline-block;
-            background-color: white;
-            border: solid chocolate;
+            background-color: $second-background-color;
+            border: solid 2px $borders-color;
             border-radius: 10px;
             color: black;
+            font-family: cursive;
             box-sizing: border-box;
             padding-top: 15px;
             padding-bottom: 15px;
-            font-size: x-large;
-            width: 13%;
+            font-size: 0.5;
+            width: 14%;
             height: 10%;
             text-align: center;
         }

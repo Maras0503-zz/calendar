@@ -1,23 +1,27 @@
+import { PopupService } from './../popup/popup.service';
 import { MainServiceService } from './../../services/main-service.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
-  styleUrls: ['./calendar.component.scss']
+  styleUrls: ['./calendar.component.scss'],
+  providers: [PopupService]
 })
 export class CalendarComponent implements OnInit {
 
-  constructor( private mainService: MainServiceService ) { }
+  constructor( private mainService: MainServiceService, private popupService: PopupService ) { }
   days = [];
   data = new Date;
   month = this.data.getMonth() + 1;
+  monthList = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   year = this.data.getFullYear();
   currentDate = Date.parse(this.month + '-01-' + this.year );
   incMonth() {
     this.month++;
     if (this.month === 13) {
       this.month = 1;
+      this.year++;
     }
     this.currentDate = Date.parse(this.month + '-01-' + this.year );
     this.days = [];
@@ -37,6 +41,7 @@ export class CalendarComponent implements OnInit {
     this.month--;
     if (this.month === 0) {
       this.month = 12;
+      this.year--;
     }
     this.currentDate = Date.parse(this.month + '-01-' + this.year );
     this.days = [];
@@ -52,6 +57,7 @@ export class CalendarComponent implements OnInit {
       this.days.push(_i + 1);
     }
   }
+
   getDaysQty(month, year) {
     switch (month) {
       case 1: {
@@ -88,25 +94,15 @@ export class CalendarComponent implements OnInit {
     }
   }
 
+  showDayOptions(day) {
+    console.log(day);
+  }
 
   ngOnInit() {
     console.log(Date.now());
     for (let _i = 1; _i < this.getDaysQty(this.month, this.year); _i++) {
       this.days.push(_i + 1);
     }
-    console.log('Styczen: ' + this.getDaysQty(1, 2018));
-    console.log('Luty (z): ' + this.getDaysQty(2, 2018));
-    console.log('Luty (p): ' + this.getDaysQty(2, 2020));
-    console.log('Marzec: ' + this.getDaysQty(3, 2018));
-    console.log('Kwiecień: ' + this.getDaysQty(4, 2018));
-    console.log('Maj: ' + this.getDaysQty(5, 2018));
-    console.log('Czerwiec: ' + this.getDaysQty(6, 2018));
-    console.log('Lipiec: ' + this.getDaysQty(7, 2018));
-    console.log('Sierpien: ' + this.getDaysQty(8, 2018));
-    console.log('Wrzesien: ' + this.getDaysQty(9, 2018));
-    console.log('Pazdziernik: ' + this.getDaysQty(10, 2018));
-    console.log('Listopad: ' + this.getDaysQty(11, 2018));
-    console.log('Grudzien: ' + this.getDaysQty(12, 2018));
   }
 
 }

@@ -19,9 +19,11 @@ export class SideMenuComponent implements OnInit {
     { 'icon': 'assessment',
       'name': 'stats'}
   ];
+
   active = '';
   setClass(event) {
-    this.mainService.setSelectedTab(event.toElement.id);
+    const target = event.target || event.srcElement || event.originalTarget;
+    this.mainService.setSelectedTab(target.id);
     this.active = this.mainService.getSelectedTab();
   }
 

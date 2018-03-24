@@ -1,0 +1,39 @@
+@import './src/assets/variables.scss';
+:host{
+    display: inline-block;
+    background-color: $first-background-color;
+    border: solid 2px $borders-color;
+    border-radius: 10px;
+    color: $second-background-color;
+    box-sizing: border-box;
+    font-family: cursive;
+    padding-top: 15px;
+    cursor: pointer;
+    padding-bottom: 15px;
+    width: 14%;
+    text-align: center;
+    &.Mon{
+        margin-left: 0%;
+    }
+    &.Tue{
+        margin-left: 14%;
+    }
+    &.Wed{
+        margin-left: 28%;
+    }
+    &.Thu{
+        margin-left: 42%;
+    }
+    &.Fri{
+        margin-left: 56%;
+    }
+    &.Sat{
+        margin-left: 70%;
+    }
+    &.Sun{
+        margin-left: 84%;
+    }
+    &:hover{
+        background-color: $first-background-color-hover;
+    }
+}

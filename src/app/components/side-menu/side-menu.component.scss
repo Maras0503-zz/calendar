@@ -4,6 +4,7 @@
     display: block;
     background-color: $first-background-color;
     height: calc(100% - #{$top-menu-height});
+    overflow: hidden;
     width: $side-menu-width;
     .material-icons{
         position: relative;

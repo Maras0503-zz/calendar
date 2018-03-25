@@ -1,3 +1,5 @@
+import { DayOptionsComponent } from './components/day-options/day-options.component';
+import { PopupService } from './services/popup.service';
 import { MainServiceService } from './services/main-service.service';
 import { Component } from '@angular/core';
 

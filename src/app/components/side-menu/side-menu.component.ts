@@ -1,7 +1,7 @@
 import { element, by } from 'protractor';
 import { MainServiceService } from './../../services/main-service.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRouteSnapshot } from '@angular/router';
 
 @Component({
   selector: 'app-side-menu',
@@ -21,18 +21,19 @@ export class SideMenuComponent implements OnInit {
   ];
 
   active = '';
+  value;
   setClass(event) {
     const target = event.target || event.srcElement || event.originalTarget;
     this.mainService.setSelectedTab(target.id);
     this.active = this.mainService.getSelectedTab();
   }
 
-  constructor(private mainService: MainServiceService, private router: Router ) {
+  constructor(private mainService: MainServiceService, private router: Router) {
     this.router = router;
   }
 
   ngOnInit() {
-      this.active = window.location.pathname.substring(1);
-      this.mainService.setSelectedTab(this.router.url.substring(1));
+    this.active = window.location.hash.substring(2);
+    this.mainService.setSelectedTab(window.location.hash.substring(2));
   }
 }

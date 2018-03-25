@@ -1,3 +1,4 @@
+import { PopupService } from './services/popup.service';
 import { MainServiceService } from './services/main-service.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -13,16 +14,14 @@ import { AccountComponent } from './components/account/account.component';
 import { StatsComponent } from './components/stats/stats.component';
 import { MonthDayComponent } from './components/month-day/month-day.component';
 import { DayOptionsComponent } from './components/day-options/day-options.component';
-import { PopupComponent } from './components/popup/popup.component';
 
 const appRoutes: Routes = [
-  { path: '', children: [
       { path: '', redirectTo: 'calendar', pathMatch: 'full'},
       { path: 'account', component: AccountComponent },
       { path: 'calendar', component: CalendarComponent },
       { path: 'messages', component: MessagesComponent },
       { path: 'stats', component: StatsComponent },
-  ]},
+
   /*
   { path: 'login', component: LoginComponent},
   { path: 'not-found', component: NotFoundComponent},
@@ -41,7 +40,6 @@ const appRoutes: Routes = [
     StatsComponent,
     MonthDayComponent,
     DayOptionsComponent,
-    PopupComponent
   ],
   entryComponents: [
     DayOptionsComponent,
@@ -49,31 +47,10 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes, {
-      useHash: true
+        useHash: true
       }),
-    /*
-    RouterModule.forRoot([
-      { path: '', redirectTo: '/calendar', pathMatch: 'full' },
-      {
-        path: 'account',
-        component: AccountComponent
-      },
-      {
-        path: 'calendar',
-        component: CalendarComponent
-      },
-      {
-        path: 'messages',
-        component: MessagesComponent
-      },
-      {
-        path: 'stats',
-        component: StatsComponent
-      }
-    ], {onSameUrlNavigation: 'reload'})
-    */
   ],
-  providers: [MainServiceService, PopupComponent],
+  providers: [MainServiceService, PopupService, DayOptionsComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

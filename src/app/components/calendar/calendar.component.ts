@@ -1,4 +1,4 @@
-import { PopupService } from './../popup/popup.service';
+import { PopupService } from '../../services/popup.service';
 import { MainServiceService } from './../../services/main-service.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -28,6 +28,8 @@ export class CalendarComponent implements OnInit {
     for (let _i = 1; _i < this.getDaysQty(this.month, this.year); _i++) {
       this.days.push(_i + 1);
     }
+    this.popupService.year = this.year;
+    this.popupService.month = this.month;
   }
   incYear() {
     this.year++;
@@ -36,6 +38,8 @@ export class CalendarComponent implements OnInit {
     for (let _i = 1; _i < this.getDaysQty(this.month, this.year); _i++) {
       this.days.push(_i + 1);
     }
+    this.popupService.year = this.year;
+    this.popupService.month = this.month;
   }
   decMonth() {
     this.month--;
@@ -48,6 +52,8 @@ export class CalendarComponent implements OnInit {
     for (let _i = 1; _i < this.getDaysQty(this.month, this.year); _i++) {
       this.days.push(_i + 1);
     }
+    this.popupService.year = this.year;
+    this.popupService.month = this.month;
   }
   decYear() {
     this.year--;
@@ -56,6 +62,8 @@ export class CalendarComponent implements OnInit {
     for (let _i = 1; _i < this.getDaysQty(this.month, this.year); _i++) {
       this.days.push(_i + 1);
     }
+    this.popupService.year = this.year;
+    this.popupService.month = this.month;
   }
 
   getDaysQty(month, year) {
@@ -94,15 +102,12 @@ export class CalendarComponent implements OnInit {
     }
   }
 
-  showDayOptions(day) {
-    console.log(day);
-  }
-
   ngOnInit() {
-    console.log(Date.now());
     for (let _i = 1; _i < this.getDaysQty(this.month, this.year); _i++) {
       this.days.push(_i + 1);
     }
+    this.popupService.year = this.year;
+    this.popupService.month = this.month;
   }
 
 }

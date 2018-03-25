@@ -1,0 +1,17 @@
+@import './src/assets/variables.scss';
+:host{
+    .optContainer{
+        position: absolute;
+        display: block;
+        text-align: center;
+        width: 300px;
+        border: solid $borders-color 2px;
+        background-color: $second-background-color;
+        cursor: pointer;
+        .opt{
+            &:hover{
+                background: $first-background-color-hover;
+            }
+        }
+    }
+}

@@ -1,3 +1,5 @@
-<p>
-  day-options works!
-</p>
+<div class='optContainer' [ngStyle]="{'left': left, 'top': top}">
+    <div class='opt' (click)='test("add apointment")'>Add apointment</div>
+    <div class='opt' (click)='test("add note")'>Add note</div>
+    <div class='opt' (click)='test("cancel")'>Cancel</div>
+</div>

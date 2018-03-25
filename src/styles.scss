@@ -1,3 +1,4 @@
+@import './src/assets/variables.scss';
 /* CSS reset */
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
     margin:0;
@@ -38,4 +39,29 @@ q:before,q:after {
     content:'';
 }
 abbr,acronym { border:0;
+}
+body{
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $borders-color;
+    &:hover{
+        background: $borders-color-hover;
+    }
 }

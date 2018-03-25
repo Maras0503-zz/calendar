@@ -2,10 +2,14 @@
 :host{
     position: relative;
     display:block;
-    max-height: calc(100% - $top-menu-height);
-    width: calc(100% - $side-menu-width);
+    max-height: calc(100% - #{$top-menu-height});
+    width: calc(100% - #{$side-menu-width});
+    overflow: auto;
     margin-left: $side-menu-width;
     font-size: xx-large;
+
+
+
     h2{
         display: inline-block;
         width: 200px;
@@ -13,26 +17,41 @@
         font-family: cursive;
         height: 60px;
         text-align: center;
+        @media screen and (max-width: $breakpoint-first){
+            width: 150px;
+            font-size: 0.8em;
+        }
     }
     .buttonsContainer{
         text-align: center;
         margin-top: 10px;
-        width: calc( 100% - 60px );
+        width: calc( 100% - #{$side-menu-width} );
         font-family: cursive;
-        button{
-            width: 60px;
-            height: 60px;
-            border: solid $borders-color 2px;
-            background-color: $second-background-color;
-            color: black;
-            font-size: large;
-            cursor: pointer;
+            button{
+                width: 60px;
+                height: 60px;
+                border: solid $borders-color 2px;
+                background-color: $second-background-color;
+                color: black;
+                font-size: large;
+                cursor: pointer;
+                @media screen and (max-width: $breakpoint-first){
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        .buttonsContainerPart{
+            display: inline-block;
+            @media screen and (max-width: $breakpoint-first){
+                display: block;
+            }
         }
     }
     .month{
         position: relative;
         padding-top: 50px;
         display: block;
+        padding-bottom: 10%;
         margin: auto;
         width: 80%;
         
@@ -49,10 +68,19 @@
             box-sizing: border-box;
             padding-top: 15px;
             padding-bottom: 15px;
-            font-size: 0.5;
+            font-size: 0.8em;
             width: 14%;
             height: 10%;
             text-align: center;
+            @media screen and (max-width: $breakpoint-first){
+                font-size: 0.5em;
+                span{
+                    display: none;
+                }
+            }
+        }
+        @media screen and (max-width: $breakpoint-first){
+            width: 100%;
         }
     }
 }

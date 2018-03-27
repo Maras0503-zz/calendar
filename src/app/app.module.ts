@@ -14,6 +14,7 @@ import { AccountComponent } from './components/account/account.component';
 import { StatsComponent } from './components/stats/stats.component';
 import { MonthDayComponent } from './components/month-day/month-day.component';
 import { DayOptionsComponent } from './components/day-options/day-options.component';
+import { PopupAddAppointmentComponent } from './components/popup-add-appointment/popup-add-appointment.component';
 
 const appRoutes: Routes = [
       { path: '', redirectTo: 'calendar', pathMatch: 'full'},
@@ -40,9 +41,11 @@ const appRoutes: Routes = [
     StatsComponent,
     MonthDayComponent,
     DayOptionsComponent,
+    PopupAddAppointmentComponent,
   ],
   entryComponents: [
     DayOptionsComponent,
+    PopupAddAppointmentComponent,
   ],
   imports: [
     BrowserModule,

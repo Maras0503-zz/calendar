@@ -39,6 +39,11 @@
                     width: 30px;
                     height: 30px;
                 }
+                &:disabled{
+                    cursor: default;
+                    border: white;
+                    color: white;
+                }
             }
         .buttonsContainerPart{
             display: inline-block;

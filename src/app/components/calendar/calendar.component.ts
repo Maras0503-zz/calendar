@@ -1,6 +1,6 @@
 import { PopupService } from '../../services/popup.service';
 import { MainServiceService } from './../../services/main-service.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 
 @Component({
   selector: 'app-calendar',
@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalendarComponent implements OnInit {
 
-  constructor( private mainService: MainServiceService, private popupService: PopupService ) { }
+  constructor( private mainService: MainServiceService, private popupService: PopupService, private containerRef: ViewContainerRef ) { }
   days = [];
   data = new Date;
   month = this.data.getMonth() + 1;
@@ -108,6 +108,7 @@ export class CalendarComponent implements OnInit {
     }
     this.popupService.year = this.year;
     this.popupService.month = this.month;
+    this.popupService.setParentContainerRef(this.containerRef);
   }
 
 }

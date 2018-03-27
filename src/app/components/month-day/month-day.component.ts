@@ -14,17 +14,15 @@ export class MonthDayComponent implements OnInit {
   @HostListener('click', ['$event'])
   onClick(event) {
     const target = event;
-    this.popupService.parameter = this.dayNo;
+    this.popupService.day = this.dayNo;
     if ( window.screen.width - target.x < 350 ) {
-      this.popupService.screenX = target.layerX - 300;
-      this.popupService.screenY = target.layerY;
+      this.popupService.optionsComponentX = target.layerX - 300;
+      this.popupService.optionsComponentY = target.layerY;
     } else {
-      this.popupService.screenX = target.layerX;
-      this.popupService.screenY = target.layerY;
+      this.popupService.optionsComponentX = target.layerX;
+      this.popupService.optionsComponentY = target.layerY;
     }
-    this.popupService.setContainerRef(this.containerRef);
-    this.popupService.setPopupRef(DayOptionsComponent);
-    this.popupService.addDynamicComponent();
+    this.popupService.addDynamicOptionsComponent(DayOptionsComponent, this.containerRef);
   }
   ngOnInit() {
   }

@@ -6,12 +6,21 @@
         text-align: center;
         width: 300px;
         border: solid $borders-color 2px;
+        font-family: cursive;
         background-color: $second-background-color;
         cursor: pointer;
         .opt{
+            border-bottom: solid 1px gray;
+            &:last-child{
+                border-bottom: unset;    
+            }
             &:hover{
                 background: $first-background-color-hover;
             }
+        }
+        @media screen and (max-width: $breakpoint-first){
+            left: 20px !important;
+            width: 250px !important;
         }
     }
 }

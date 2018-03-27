@@ -18,7 +18,7 @@
                 background: $first-background-color-hover;
             }
         }
-        @media screen and (max-width: $breakpoint-first){
+        @media screen and (max-width: $breakpoint-phone){
             left: 20px !important;
             width: 250px !important;
         }

@@ -22,12 +22,12 @@ export class DayOptionsComponent implements OnInit {
   constructor(private popupService: PopupService, private containerRef: ViewContainerRef) { }
   showAppointmentPopup() {
     // this.popupService.deleteComponent();
-    this.popupService.addDynamicPopupComponent(DayOptionsComponent, this.popupService.parentContainer);
+    this.popupService.addDynamicPopupComponent(PopupAddAppointmentComponent, this.popupService.parentContainer);
   }
 
   ngOnInit() {
-    this.left = this.popupService.popupComponentX + 'px';
-    this.top = this.popupService.popupComponentY + 'px';
+    this.left = this.popupService.optionsComponentX + 'px';
+    this.top = this.popupService.optionsComponentY + 'px';
   }
 
 }

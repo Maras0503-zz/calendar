@@ -36,7 +36,7 @@
     &:hover{
         background-color: $first-background-color-hover;
     }
-    @media screen and (max-width: $breakpoint-first){
+    @media screen and (max-width: $breakpoint-phone){
         padding-top: 10px;
         padding-bottom: 10px;
     }

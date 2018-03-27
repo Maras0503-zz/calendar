@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./popup-add-appointment.component.scss']
 })
 export class PopupAddAppointmentComponent implements OnInit {
-
+  left = 50 + '%';
+  top = 50 + '%';
   constructor() { }
 
   ngOnInit() {

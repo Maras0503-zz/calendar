@@ -17,7 +17,7 @@
         font-family: cursive;
         height: 60px;
         text-align: center;
-        @media screen and (max-width: $breakpoint-first){
+        @media screen and (max-width: $breakpoint-phone){
             width: 150px;
             font-size: 0.8em;
         }
@@ -35,7 +35,7 @@
                 color: black;
                 font-size: large;
                 cursor: pointer;
-                @media screen and (max-width: $breakpoint-first){
+                @media screen and (max-width: $breakpoint-phone){
                     width: 30px;
                     height: 30px;
                 }
@@ -47,7 +47,7 @@
             }
         .buttonsContainerPart{
             display: inline-block;
-            @media screen and (max-width: $breakpoint-first){
+            @media screen and (max-width: $breakpoint-phone){
                 display: block;
             }
         }
@@ -77,14 +77,14 @@
             width: 14%;
             height: 10%;
             text-align: center;
-            @media screen and (max-width: $breakpoint-first){
+            @media screen and (max-width: $breakpoint-phone){
                 font-size: 0.5em;
                 span{
                     display: none;
                 }
             }
         }
-        @media screen and (max-width: $breakpoint-first){
+        @media screen and (max-width: $breakpoint-phone){
             width: 100%;
         }
     }

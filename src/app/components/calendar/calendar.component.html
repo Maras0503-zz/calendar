@@ -1,9 +1,9 @@
 <div class='buttonsContainer'>
     <div class='buttonsContainerPart'>
-        <button (click)='decMonth()' [disabled]="popupService.popupQty">-</button><h2>{{monthList[month-1]}}</h2><button (click)='incMonth()' [disabled]="popupService.popupQty">+</button>
+        <button (click)='decMonth()' [disabled]="popupService.optionsCounter">-</button><h2>{{monthList[month-1]}}</h2><button (click)='incMonth()' [disabled]="popupService.optionsCounter || popupService.popupCounter">+</button>
     </div>
     <div class='buttonsContainerPart'>
-        <button (click)='decYear()' [disabled]="popupService.popupQty">-</button><h2>{{year}}</h2><button (click)='incYear()' [disabled]="popupService.popupQty">+</button>
+        <button (click)='decYear()' [disabled]="popupService.optionsCounter">-</button><h2>{{year}}</h2><button (click)='incYear()' [disabled]="popupService.optionsCounter">+</button>
     </div>
 </div>
 

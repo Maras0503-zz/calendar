@@ -15,6 +15,7 @@ export class PopupService {
   optionsCounter = 0; // optionsComponent exists?
   popupCounter = 0; // popupComponent exists?
   parentContainer; // define where to put created component
+  curentHour;
   constructor(private factoryResolver: ComponentFactoryResolver) {
     this.factoryResolver = factoryResolver;
   }
@@ -24,7 +25,7 @@ export class PopupService {
   }
 
   addDynamicOptionsComponent(optionsRef, containerRef) {
-    if (this.optionsCounter === 0) {
+    if (this.optionsCounter === 0 && this.popupCounter === 0) {
     const factory = this.factoryResolver
       .resolveComponentFactory(optionsRef);
     this.optionsComponent = factory
@@ -34,7 +35,7 @@ export class PopupService {
     }
   }
   addDynamicPopupComponent(popupRef, containerRef) {
-    if (this.popupCounter === 0) {
+    if (this.popupCounter === 0 ) {
     const factory = this.factoryResolver
       .resolveComponentFactory(popupRef);
     this.popupComponent = factory

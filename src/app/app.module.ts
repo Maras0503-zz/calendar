@@ -1,8 +1,11 @@
+import { MatInputModule, MatSelectModule } from '@angular/material';
 import { PopupService } from './services/popup.service';
 import { MainServiceService } from './services/main-service.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModel, FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -49,6 +52,10 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    MatInputModule,
+    BrowserAnimationsModule,
+    MatSelectModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes, {
         useHash: true
       }),

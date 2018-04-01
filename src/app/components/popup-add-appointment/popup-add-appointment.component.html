@@ -1,3 +1,18 @@
 <div class='popup' [ngStyle]="{'left': left, 'top': top}">
-  TEST TEST TEST
+  <mat-form-field>
+    <input (keyup)="onKeyDescription($event)" matInput placeholder="Appointment description">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select [(value)]="selected" placeholder="Subject of apointment">
+      <mat-option *ngFor='let option of options' (click)='periodClick(option.value)' value={{option.value}} >{{option.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div *ngIf="period">
+    <mat-form-field>
+      <input [(ngModel)]="hourInput" (keyup)='setHours()' type='number' min="0" max="23" matInput placeholder="Hours">
+    </mat-form-field>
+    <mat-form-field>
+      <input [(ngModel)]="minutesInput" (keyup)='setMinutes()' type='number' min="0" max="59" matInput placeholder="Minutes">
+    </mat-form-field>
+  </div>
 </div>

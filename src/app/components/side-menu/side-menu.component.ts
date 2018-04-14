@@ -20,20 +20,9 @@ export class SideMenuComponent implements OnInit {
       'name': 'stats'}
   ];
 
-  active = '';
-  value;
-  setClass(event) {
-    const target = event.target || event.srcElement || event.originalTarget;
-    this.mainService.setSelectedTab(target.id);
-    this.active = this.mainService.getSelectedTab();
-  }
-
-  constructor(private mainService: MainServiceService, private router: Router) {
-    this.router = router;
+  constructor(private mainService: MainServiceService) {
   }
 
   ngOnInit() {
-    this.active = window.location.hash.substring(2);
-    this.mainService.setSelectedTab(window.location.hash.substring(2));
   }
 }

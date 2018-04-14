@@ -1,5 +1,5 @@
 <i class="material-icons" *ngFor="let icon of icons">
-    <div routerLink={{icon.name}} 
+    <div routerLink={{icon.name}}  routerLinkActive="active"
             [ngClass]="active==icon.name ? 'side-menu_button active' : 'side-menu_button'" 
                 id={{icon.name}} (click)='setClass($event)' title={{icon.name}}>
         {{icon.icon}}

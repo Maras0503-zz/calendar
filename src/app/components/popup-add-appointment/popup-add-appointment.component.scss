@@ -3,7 +3,13 @@
     .popup{
         position: fixed;
         display: block;
+        padding: 10%;
+        width: 50%;
+        transform: translateX( -50% );
         background: $second-background-color;
         border: 2px solid $borders-color;
+    }
+    mat-form-field{
+        display: block;
     }
 }

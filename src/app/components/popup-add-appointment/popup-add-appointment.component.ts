@@ -1,4 +1,5 @@
-import { MatInputModule, MatSelectModule } from '@angular/material';
+import { DbServiceService } from './../../services/db-service.service';
+import { PopupService } from './../../services/popup.service';
 import { Component, OnInit, NgModule } from '@angular/core';
 @Component({
   selector: 'app-popup-add-appointment',
@@ -11,7 +12,7 @@ export class PopupAddAppointmentComponent implements OnInit {
   top = 20 + '%';
   hourInput: any = 12;
   minutesInput: any = 30;
-  constructor() { }
+  constructor( private popupService: PopupService, private dbService: DbServiceService ) { }
   options = [
     { 'name': 'Whole day',
       'value': false},
@@ -19,17 +20,19 @@ export class PopupAddAppointmentComponent implements OnInit {
       'value': true}
   ];
   period;
+  selected;
   name;
   hour = 12;
   minutes = 0;
-  periodClick(period) {
+  periodClick(period, name) {
     this.period = period;
+    this.selected = name;
   }
   onKeyDescription(event: any) {
     this.name = event.target.value;
   }
   setHours() {
-    if (this.hourInput > 23 || this.hourInput == null) {
+    if (this.hourInput > 23) {
       this.hourInput = 23;
     }
     if (this.hourInput < 0) {
@@ -37,12 +40,20 @@ export class PopupAddAppointmentComponent implements OnInit {
     }
   }
   setMinutes(event: any) {
-    if (this.minutesInput > 59 || this.hourInput == null) {
+    if (this.minutesInput > 59) {
       this.minutesInput = 59;
     }
     if (this.minutesInput < 0) {
       this.minutesInput = 0;
     }
+  }
+  closePopup() {
+    this.popupService.deletePopupComponent();
+  }
+  saveAppointment() {
+    this.dbService.getUsers().subscribe(data => {
+      console.log(data);
+    });
   }
   ngOnInit() {
   }

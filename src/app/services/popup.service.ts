@@ -1,4 +1,3 @@
-import { DayOptionsComponent } from './../components/day-options/day-options.component';
 import { Injectable, ComponentFactoryResolver, Inject, ReflectiveInjector } from '@angular/core';
 
 @Injectable()

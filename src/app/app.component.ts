@@ -9,6 +9,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private mainService: MainServiceService) {
+  constructor(private mainService: MainServiceService, private popupService: PopupService) {
   }
 }

@@ -19,7 +19,7 @@ export class DayOptionsComponent implements OnInit {
   onClick() {
     this.popupService.deleteOptionComponent();
   }
-  constructor(private popupService: PopupService, private containerRef: ViewContainerRef) { }
+  constructor( private popupService: PopupService, private containerRef: ViewContainerRef) { }
   showAppointmentPopup() {
     this.popupService.addDynamicPopupComponent(PopupAddAppointmentComponent, this.popupService.parentContainer);
   }

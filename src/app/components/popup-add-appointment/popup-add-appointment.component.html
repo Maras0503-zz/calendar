@@ -3,8 +3,8 @@
     <input (keyup)="onKeyDescription($event)" matInput placeholder="Appointment description">
   </mat-form-field>
   <mat-form-field>
-    <mat-select [(value)]="selected" placeholder="Subject of apointment">
-      <mat-option *ngFor='let option of options' (click)='periodClick(option.value)' value={{option.value}} >{{option.name}}</mat-option>
+    <mat-select placeholder="Subject of apointment">
+      <mat-option *ngFor='let option of options' (click)='periodClick(option.value, option.name)' value={{option.value}} >{{option.name}}</mat-option>
     </mat-select>
   </mat-form-field>
   <div *ngIf="period">
@@ -15,4 +15,6 @@
       <input [(ngModel)]="minutesInput" (keyup)='setMinutes()' type='number' min="0" max="59" matInput placeholder="Minutes">
     </mat-form-field>
   </div>
+  <button (click)='saveAppointment()' mat-button>Accept</button>
+  <button (click)='closePopup()' mat-button>Cancel</button>
 </div>
